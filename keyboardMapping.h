@@ -1,0 +1,89 @@
+// Keyboard Mapping for standard Linux keyboard
+// Linux input character codes mapped in linux/include/uapi/linux/input-event-codes.h
+#include <stddef.h>
+
+
+typedef enum KeyEventValue {
+    KEY_RELEASED = 0,
+    KEY_PRESSED  = 1,
+    KEY_REPEAT   = 2
+} KeyEventValue_t;
+
+static const char *keymap[] = {
+    [0]   = NULL,       // KEY_RESERVED
+    [1]   = "ESC",
+    [2]   = "1",
+    [3]   = "2",
+    [4]   = "3",
+    [5]   = "4",
+    [6]   = "5",
+    [7]   = "6",
+    [8]   = "7",
+    [9]   = "8",
+    [10]  = "9",
+    [11]  = "0",
+    [12]  = "-",
+    [13]  = "=",
+    [14]  = "BACKSPACE",
+    [15]  = "TAB",
+    [16]  = "q",
+    [17]  = "w",
+    [18]  = "e",
+    [19]  = "r",
+    [20]  = "t",
+    [21]  = "y",
+    [22]  = "u",
+    [23]  = "i",
+    [24]  = "o",
+    [25]  = "p",
+    [26]  = "[",
+    [27]  = "]",
+    [28]  = "ENTER",
+    [29]  = "LCTRL",
+    [30]  = "a",
+    [31]  = "s",
+    [32]  = "d",
+    [33]  = "f",
+    [34]  = "g",
+    [35]  = "h",
+    [36]  = "j",
+    [37]  = "k",
+    [38]  = "l",
+    [39]  = ";",
+    [40]  = "'",
+    [41]  = "`",
+    [42]  = "LSHIFT",
+    [43]  = "\\",
+    [44]  = "z",
+    [45]  = "x",
+    [46]  = "c",
+    [47]  = "v",
+    [48]  = "b",
+    [49]  = "n",
+    [50]  = "m",
+    [51]  = ",",
+    [52]  = ".",
+    [53]  = "/",
+    [54]  = "RSHIFT",
+    [55]  = "*",        // keypad
+    [56]  = "LALT",
+    [57]  = "SPACE",
+    [58]  = "CAPSLOCK",
+    // F1-F10
+    [59]  = "F1",  [60]  = "F2",  [61]  = "F3",  [62]  = "F4",
+    [63]  = "F5",  [64]  = "F6",  [65]  = "F7",  [66]  = "F8",
+    [67]  = "F9",  [68]  = "F10",
+    [87]  = "F11", [88]  = "F12",
+    // Navigazione
+    [71]  = "HOME",   [72]  = "UP",     [73]  = "PAGEUP",
+    [75]  = "LEFT",   [77]  = "RIGHT",
+    [79]  = "END",    [80]  = "DOWN",   [81]  = "PAGEDOWN",
+    [82]  = "INSERT", [83]  = "DELETE",
+    // Extra
+    [97]  = "RCTRL",
+    [100] = "RALT",
+    [125] = "LMETA",  // tasto Windows/Super sinistro
+    [126] = "RMETA",
+};
+
+#define KEYMAP_SIZE (sizeof(keymap) / sizeof(keymap[0]))
